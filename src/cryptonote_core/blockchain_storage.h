@@ -115,7 +115,10 @@ namespace cryptonote
     bool reset_and_set_genesis_block(const block& b);
     bool create_block_template(block& b, const account_public_address& miner_address, difficulty_type& di, uint64_t& height, const blobdata& ex_nonce);
     bool have_block(const crypto::hash& id);
+
     size_t get_total_transactions();
+    uint64_t get_already_generated_coins();
+
     bool get_outs(uint64_t amount, std::list<crypto::public_key>& pkeys);
     bool get_short_chain_history(std::list<crypto::hash>& ids);
     bool find_blockchain_supplement(const std::list<crypto::hash>& qblock_ids, NOTIFY_RESPONSE_CHAIN_ENTRY::request& resp);

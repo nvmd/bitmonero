@@ -1302,6 +1302,12 @@ size_t blockchain_storage::get_total_transactions()
   return m_transactions.size();
 }
 //------------------------------------------------------------------
+uint64_t blockchain_storage::get_already_generated_coins()
+{
+  CRITICAL_REGION_LOCAL(m_blockchain_lock);
+  return m_blocks.size() > 0 ? m_blocks.back().already_generated_coins : 0;
+}
+//------------------------------------------------------------------
 bool blockchain_storage::get_outs(uint64_t amount, std::list<crypto::public_key>& pkeys)
 {
   CRITICAL_REGION_LOCAL(m_blockchain_lock);
