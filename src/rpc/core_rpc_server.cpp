@@ -146,6 +146,11 @@ namespace cryptonote
     res.incoming_connections_count = total_conn - res.outgoing_connections_count;
     res.white_peerlist_size = m_p2p.get_peerlist_manager().get_white_peers_count();
     res.grey_peerlist_size = m_p2p.get_peerlist_manager().get_gray_peers_count();
+
+    res.current_money_supply = m_core.get_blockchain_storage().get_already_generated_coins();
+    res.max_money_supply = MONEY_SUPPLY;
+    res.denominator = COIN;
+
     res.status = CORE_RPC_STATUS_OK;
     return true;
   }

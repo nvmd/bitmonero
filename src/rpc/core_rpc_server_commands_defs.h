@@ -250,6 +250,9 @@ namespace cryptonote
       uint64_t incoming_connections_count;
       uint64_t white_peerlist_size;
       uint64_t grey_peerlist_size;
+      uint64_t current_money_supply;
+      uint64_t max_money_supply;
+      uint64_t denominator;
 
       BEGIN_KV_SERIALIZE_MAP()
         KV_SERIALIZE(status)
@@ -263,6 +266,9 @@ namespace cryptonote
         KV_SERIALIZE(incoming_connections_count)
         KV_SERIALIZE(white_peerlist_size)
         KV_SERIALIZE(grey_peerlist_size)
+        KV_SERIALIZE(current_money_supply)
+        KV_SERIALIZE(max_money_supply)
+        KV_SERIALIZE(denominator)
       END_KV_SERIALIZE_MAP()
     };
   };
