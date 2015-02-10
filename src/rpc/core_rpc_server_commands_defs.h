@@ -416,7 +416,7 @@ namespace cryptonote
     };
   };
   
-  struct block_header_responce
+  struct block_header_response
   {
       uint8_t major_version;
       uint8_t minor_version;
@@ -456,7 +456,7 @@ namespace cryptonote
     struct response
     {
       std::string status;
-      block_header_responce block_header;
+      block_header_response block_header;
       
       BEGIN_KV_SERIALIZE_MAP()
         KV_SERIALIZE(block_header)
@@ -480,7 +480,7 @@ namespace cryptonote
     struct response
     {
       std::string status;
-      block_header_responce block_header;
+      block_header_response block_header;
       
       BEGIN_KV_SERIALIZE_MAP()
         KV_SERIALIZE(block_header)
@@ -504,7 +504,7 @@ namespace cryptonote
     struct response
     {
       std::string status;
-      block_header_responce block_header;
+      block_header_response block_header;
       
       BEGIN_KV_SERIALIZE_MAP()
         KV_SERIALIZE(block_header)
