@@ -545,6 +545,7 @@ namespace cryptonote
     response.hash = string_tools::pod_to_hex(hash);
     response.difficulty = m_core.get_blockchain_storage().block_difficulty(height);
     response.reward = get_block_reward(blk);
+    response.number_of_txs = blk.tx_hashes.size() + 1;  // +1 for miner tx
     return true;
   }
   bool core_rpc_server::fill_get_info_response(COMMAND_RPC_GET_INFO::response& res)
