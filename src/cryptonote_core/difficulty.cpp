@@ -124,7 +124,7 @@ namespace cryptonote {
     assert(total_work > 0);
     uint64_t low, high;
     mul(total_work, target_seconds, low, high);
-    if (high != 0 || low + time_span - 1 < low) {
+    if (high != 0 || time_span < 1) {
       return 0;
     }
     return (low + time_span - 1) / time_span;
