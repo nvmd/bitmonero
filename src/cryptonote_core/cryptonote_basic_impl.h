@@ -89,7 +89,7 @@ std::ostream &print256(std::ostream &o, const T &v) {
   return o << "<" << epee::string_tools::pod_to_hex(v) << ">";
 }
 
-bool parse_hash256(const std::string str_hash, crypto::hash& hash);
+bool parse_hash256(const std::string& str_hash, crypto::hash& hash);
 
 namespace crypto {
   inline std::ostream &operator <<(std::ostream &o, const crypto::public_key &v) { return print256(o, v); }
